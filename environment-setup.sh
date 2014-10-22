@@ -21,12 +21,6 @@ git clone https://github.com/BYU-ARCLITE/PlayGraph.git
 git clone https://github.com/BYU-ARCLITE/Ayamel-Examples.git
 git clone https://github.com/BYU-ARCLITE/DictionaryLookup.git
 
-cd /var/www
-git clone https://github.com/BYU-ARCLITE/subtitle-timeline-editor.git
-git clone https://github.com/BYU-ARCLITE/TimedText.git
-git clone https://github.com/BYU-ARCLITE/EditorWidgets.git
-git clone https://github.com/BYU-ARCLITE/Ayamel.js.git
-
 echo sudo play -Dhttp.port=9003 -Dhttp.address=localhost run >> /vagrant/Playgraph/start
 echo sudo play -Dhttp.port=9006 -Dhttp.address=localhost run >> /vagrant/Ayamel-Examples/start
 echo sudo play -Dhttp.port=9010 -Dhttp.address=localhost run >> /vagrant/DictionaryLookup/start
@@ -34,6 +28,9 @@ echo sudo play -Dhttp.port=9010 -Dhttp.address=localhost run >> /vagrant/Diction
 sudo chmod 775 /vagrant/Playgraph/start
 sudo chmod 775 /vagrant/Ayamel-Examples/start
 sudo chmod 775 /vagrant/DictionaryLookup/start
+
+cd /vagrant/Ayamel-Examples
+git checkout develop
 
 # now go into vagrant and do some fixups through putty
 # Username: vagrant
@@ -54,3 +51,5 @@ sudo chmod 775 /vagrant/DictionaryLookup/start
 # Make sure that your Ayamel-Examples is configured
 # cd /vagrant/Ayamel-Examples
 # sudo play -Dhttp.port=9006 -Dhttp.address=127.0.0.1 run
+
+# sudo apt-get install phpmyadmin
